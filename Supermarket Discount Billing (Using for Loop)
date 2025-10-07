@@ -1,0 +1,32 @@
+import java.util.*;
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("number of items purchased : ");
+        int size = sc.nextInt();
+        int[] price = new int[size];
+        System.out.println("enter price of each item : ");
+        for(int i =0;i<size;i++){
+        
+            price[i]=sc.nextInt();
+        }
+        System.out.println(Arrays.toString(price));
+        double sum=0;
+        for(int i=0 ; i<size; i++){
+            if(price[i]>=500){
+                sum=sum+ price[i]*0.8;
+            }
+            else if(price[i]>=200 && price[i]<499){
+                sum=sum+ price[i]*0.9;
+                
+            }
+            else{
+                sum=sum+price[i];
+            }
+        }
+        System.out.println("total amount : "+sum);
+
+
+    }
+}
