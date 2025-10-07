@@ -1,0 +1,20 @@
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter distance : ");
+        int distance = sc.nextInt();
+        if (distance <= 5){
+            System.out.println("fare is 100");
+        }
+        else if (distance>5 && distance<=15){
+            System.out.println("fare is "+distance*10);
+
+        }
+        else{
+            System.out.println("fare is "+distance*8);
+        }
+    
+    }
+}
+
