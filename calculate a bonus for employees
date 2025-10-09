@@ -1,0 +1,35 @@
+import java.util.*;
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the salary : ");
+        double salary= sc.nextDouble();
+        sc.nextLine();
+        System.out.println("rating enter : ");
+        String rating=sc.nextLine().toLowerCase();
+        if(rating.equals("excellent")){
+            System.out.println("salary is : "+(0.2*salary+salary));
+            int bonus=10000;
+            System.out.println(bonus);
+        }
+        else if (rating.equals("good")){
+            System.out.println("salary is : "+(0.1*salary+salary));
+            int bonus=5000;
+             System.out.println(bonus);
+        }
+        else if (rating.equals("average")){
+            System.out.println("salary is : "+(0.05*salary+salary));
+            int bonus=2000;
+             System.out.println(bonus);
+        }
+        else if (rating.equals("poor")){
+            System.out.println("no bounous no increment and the salary remains : "+salary);
+        }
+        else{
+            System.out.println("invalid output");
+        }
+ 
+
+    }
+}
