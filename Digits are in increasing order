@@ -1,0 +1,24 @@
+import java.util.*;
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter number ");
+        String num=sc.nextLine();
+        boolean isincreasing = true;
+        for(int i=0;i<num.length()-1;i++){
+            if(num.charAt(i)>num.charAt(i+1)){
+                isincreasing= false;
+                break;
+
+            }
+            
+        }
+        if(isincreasing){
+            System.out.println("digits increasing");
+        }
+        else{
+            System.out.println("digits not increasing");
+        }
+    }
+}
