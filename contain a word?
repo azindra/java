@@ -1,0 +1,15 @@
+import java.util.*;
+public class main {
+    public static void main(String[] args){
+        String text = "hey hello how are  you all ... happy sad mad ";
+        System.out.println("enter a word : ");
+        Scanner sc =  new Scanner(System.in);
+        
+        String word = sc.nextLine().toLowerCase();
+        if (text.contains(word)){
+            System.out.println("yes word is present in text");}
+        else{
+            System.out.println("not present");
+        }
+        
+    }
