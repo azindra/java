@@ -1,0 +1,12 @@
+import java.util.*;
+public class main{
+    public static void main( String[] args ){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter text1 : ");
+        String text1=sc.nextLine();
+        System.out.println("enter text2: ");
+        String text2=sc.nextLine();
+        String word=text1+text2;
+        System.out.println("concatination of two text : "+word);
+    }
+}
