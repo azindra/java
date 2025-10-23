@@ -1,0 +1,41 @@
+import java.util.*;
+public class main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter size of an array : ");
+        int size= sc.nextInt();
+
+        int[] arr= new int[size];
+        if(size<2){
+            System.out.println("size atleast should be 2 ");
+        }
+        System.out.println("enter the elements : ");
+        
+        for (int i=0;i<size;i++){
+            arr[i]= sc.nextInt();
+
+        }
+        System.out.println("array : "+Arrays.toString(arr));
+        int first = Integer.MIN_VALUE;
+        int second= Integer.MIN_VALUE;
+        for(int num:arr){
+            if(num>first){
+                second=first;
+                first=num;
+            }
+            else if (num>second && num!=first){
+                second=num;
+            }
+        
+
+        }
+        if(second== Integer.MIN_VALUE){
+            System.out.println("second largest element doesnt exist ");
+
+        }
+        else{
+            System.out.println("second largest element : "+second);
+        }
+        
+    }
+}
