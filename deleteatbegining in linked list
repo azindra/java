@@ -1,0 +1,52 @@
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data= data;
+        this.next=null;
+    }
+
+}
+public class main {
+    Node head;
+
+    public void insert_at_begining(int data){
+        Node newnode= new Node(data);
+        newnode.next=head;
+        head = newnode;
+
+
+    }
+    public void deleteatbegining(){
+        if(head==null){
+            System.out.println("list is empty");
+        }
+        head = head.next;
+    }
+    public void display(){
+        if(head==null){
+            System.out.println("list is empty");
+            return;
+        }
+        Node temp = head;//create a pointer
+        while(temp!=null){
+            System.out.print(temp.data+"->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+
+    }
+    public static void main(String[] args) {
+        main list = new main();
+        list.insert_at_begining(10);
+        list.insert_at_begining(20);
+        list.insert_at_begining(30);
+        list.insert_at_begining(40);
+        list.display();
+        System.out.println("delete at begining ");
+        list.deleteatbegining();
+        list.deleteatbegining();
+        list.display();
+    }
+}
