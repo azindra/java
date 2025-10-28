@@ -1,0 +1,40 @@
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){//constructor
+        this.data=data;
+        this.next=null;
+    }
+}
+public class Mains {
+    Node head;
+
+    public void insert_at_begining(int data){
+        Node newnode= new Node(data);
+        newnode.next=head;
+        head=newnode;
+
+    }
+    public void display(){
+        if(head==null){
+            System.out.println("linked list is empty");
+            return;
+        }
+        Node temp=head;//pointer 
+        while(temp!=null){
+            System.out.print (temp.data+"->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+
+    }
+    public static void main(String[] args) {
+        Mains list=new Mains();
+        list.insert_at_begining(10);
+        list.insert_at_begining(20);
+        list.insert_at_begining(45);
+        list.insert_at_begining(79);
+        list.display();
+    }
+}
