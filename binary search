@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class arry {
+    public static void main(String[] args) {
+        int[] arr={12,33,34,87,122};
+        System.out.println("array : "+Arrays.toString(arr));
+        //binary search
+        int lb = 0;
+        int rb = arr.length-1;
+        
+        Scanner sc = new Scanner (System.in);
+        System.out.println("enter key :");
+        int key = sc.nextInt();
+        boolean found = false;
+        while(lb<=rb){
+             int mid = lb+(rb-lb)/2;
+            if(arr[mid]==key){
+                System.out.println("key of value "+key+" is found and its index is : "+mid);
+                found= true;
+                break;
+
+               
+                
+            }
+           
+            else if(arr[mid]<key) {
+                lb=mid+1;
+                
+
+            }
+            else{
+                rb=mid-1;
+               
+
+            }
+        }
+        if(!found){
+            System.out.println("key not found ");
+
+        }
+
+    }
+    
+}
