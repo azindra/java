@@ -1,0 +1,40 @@
+class library{
+    String booktype;
+    int bookid;
+
+    library(String booktype,int bookid){
+        this . booktype=booktype;
+        this.bookid = bookid;
+    }
+    public void display(){
+        System.out .println("booktype : "+booktype+" bookid : "+bookid);
+    }
+}
+class student_lib extends library{
+    String bookname;
+    int year;
+    String s_name;
+
+    student_lib(String booktype ,int bookid ,String bookname,int year,String s_name){
+        super(booktype, bookid);
+        this.bookname=bookname;
+        this. year = year;
+        this.s_name= s_name;
+    }
+    public void displayss(){
+        super.display();
+        System.out.println("bookname : "+bookname+"year : "+year+" s_name : "+s_name);
+
+    }
+    public void greet(){
+        System.out.println(s_name+" welcome to student library !!");
+    }
+}
+public class opps {
+
+    public static void main(String[] args) {
+        student_lib ss1= new student_lib("horror",12353,"rath",2006,"ashik");
+        ss1.displayss();
+        ss1.greet();
+    }
+}
