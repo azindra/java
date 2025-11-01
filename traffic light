@@ -1,0 +1,21 @@
+import java.util.*;
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a colour : ");
+        String color = sc. nextLine();
+        if(color.equalsIgnoreCase("red")){
+            System.out.println("says STOP ");
+        }
+        else if (color.equalsIgnoreCase("green")){
+            System.out.println("says GO ");
+        }
+        else if (color.equalsIgnoreCase("yellow")){
+            System.out.println("says WAIT ");
+        }
+        else{
+            System.out.println("invalid input");
+        }
+    }
+}
