@@ -1,0 +1,18 @@
+import java.util.*;
+public class main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        int balance = 10000;
+        System.out.println("enter withdrawl amount : ");
+        int withdraw=sc.nextInt();
+        if(balance>withdraw){
+            balance= balance-withdraw;
+            System.out.println("withdrawl amount : "+withdraw);
+            System.out.println("balance : "+balance);
+
+        }
+        else{
+            System.out.println("insufficent balance");
+        }
+    }
+}
