@@ -1,0 +1,33 @@
+
+import java.util.*;
+
+public class arry{
+    public static void reverse(int[] arr , int start ,int end){
+        while(start<end){
+            int temp = arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("enter size :");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter elements : ");
+        for (int i =0;i<size;i++){
+            arr[i]=sc.nextInt();
+
+        }
+        System.out.println("array : "+Arrays.toString(arr));
+        System.out.println("no of right rotation k : ");
+        int k = sc.nextInt();
+        k=k%size;
+        reverse(arr,0,size-1);//reverse entire array
+        reverse(arr,0,k-1);//reverse of first k elements
+        reverse(arr,k,size-1);//reverse of the last (n-k) elements
+        System.out.println("after right rotation of an array : "+Arrays.toString(arr));
+    }
+}
