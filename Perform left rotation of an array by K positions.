@@ -1,0 +1,36 @@
+import java.util.*;
+public class arry{
+    public static void reverse(int[] arr , int start , int end ){
+        while(start<end){
+            int temp = arr[start];
+            arr[start]= arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        System.out.println("enter size");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        System.out.println("enter elements : ");
+        for (int i = 0;i<size;i++){
+            arr[i]= sc.nextInt();
+
+        }
+        System.out.println("array : "+Arrays.toString(arr));
+        System.out.println("enter k vaklue : ");
+        int k = sc.nextInt();
+        k = k%size;
+        reverse(arr,0,k-1);//reverseing first k elements
+        reverse(arr,k,size-1);//reverse of n-k elements
+        reverse(arr,0,size-1);//reverse entire array
+        System.out.println("array after left roation : "+Arrays.toString(arr));
+
+        
+
+
+    }
+}
