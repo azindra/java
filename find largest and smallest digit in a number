@@ -1,0 +1,28 @@
+import java .util.*;
+public class main1{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number :");
+        long num = sc.nextLong();
+        System.out.println("the given number is : "+num);
+        int smallest = 9;
+        int largest = 0;
+        if(num==0){
+            System.out.println("largest digit : 0");
+            System.out.println("smallest digit : 0");
+            return;
+
+        }
+        while(num>0){
+            int digit = (int)(num%10);
+            if(digit<smallest) smallest=digit;
+            if(digit>largest) largest = digit;
+            num=num/10;
+
+
+        }
+        System.out.println("the smallest digit : "+smallest);
+        System.out.println("the largest digit : "+largest);
+    }
+}
+
