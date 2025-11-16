@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class main1 {
+
+    public static String longestword(String sentence){
+        if(sentence==null || sentence.isEmpty()) return "";
+        String[] words=sentence.split("\\s+");
+        String longest="";
+        for(String w:words){
+            if(w.length()>longest.length()){
+                longest=w;
+            }
+        }
+        return longest;
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        System.out.println("enter the sentence : ");
+        String sen = sc.nextLine();
+        System.out.println("the longest word in the sentence is : "+longestword(sen));
+    }
+}
