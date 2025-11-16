@@ -1,0 +1,29 @@
+import java.util.*;
+public class main1 {
+
+    public static void zerosatend(int[] arr){
+        int n = arr.length;
+        int nonzeroindex=0;
+        for(int i =0;i<n;i++){
+            if(arr[i]!=0){
+                arr[nonzeroindex++] = arr[i];
+            }
+        }
+        while(nonzeroindex<n){
+            arr[nonzeroindex++]=0;
+        }
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter size : ");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        for(int i =0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("array : "+Arrays.toString(arr));
+        zerosatend(arr);
+        System.out.println("after moving zeros at end "+Arrays.toString(arr));
+    }
+}
