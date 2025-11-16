@@ -1,0 +1,23 @@
+import java.util.*;
+public class main1 {
+
+    public static String dupicateremove(String str){
+        if(str==null || str.isEmpty()) return "";
+        boolean[] seen= new boolean[256];
+        StringBuilder result = new StringBuilder();
+        for(char c : str.toCharArray()){
+            if(!seen[c]){
+                seen[c] =  true;
+                result.append(c);
+            }
+        }
+return result.toString();
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a string");
+        String s = sc.nextLine();
+        System.out.println("after removing duplicacy :"+dupicateremove(s));
+        
+    }
+}
