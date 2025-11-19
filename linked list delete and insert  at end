@@ -1,0 +1,85 @@
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data= data;
+        this.next= null;
+    }
+}
+public class ll {
+    Node head;
+
+    public void insert_at_begining(int data){
+        Node newnode = new Node(data);
+        newnode.next= head;
+        head = newnode;
+    }
+    public void delete_at_begining(){
+        if(head == null){
+            System.out.println("ll is empty");
+            return;
+        }
+        head = head.next;
+    }
+    public void insert_at_end(int data){
+        Node newnode=new Node(data);
+        if(head == null){
+            head = newnode;
+            return;
+        }
+        Node temp = head;
+        while(temp.next!=null){
+            temp= temp.next;
+
+        }
+        temp.next = newnode;
+
+    }
+    public void deleteatend(){
+        if(head == null){
+            System.out.println("ll is empty");
+            return;
+        }
+        if(head.next==null){
+            head =null;
+            return;
+        }
+        Node temp = head;
+        while(temp.next.next!=null){
+            temp=temp.next;
+
+        }
+        temp.next= null;
+    }
+    public void display(){
+        if(head == null){
+            System.out.println("ll is empty ");
+            return;
+        }
+        Node temp = head;
+        while(temp!=null){
+            System.out.print(temp.data+"->");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+    public static void main(String[] args) {
+        ll list = new ll();
+        list.insert_at_begining(10);
+        list.insert_at_begining(20);
+        list.insert_at_begining(30);
+        list.display();
+        list.delete_at_begining();
+        list.delete_at_begining();
+        list.display();
+        list.insert_at_end(40);
+        list.insert_at_end(50);
+        list.insert_at_end(70);
+        list.display();
+        list.deleteatend();
+        list.deleteatend();
+        list.display();
+    }
+}
+
