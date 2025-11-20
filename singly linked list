@@ -1,0 +1,120 @@
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data = data;
+        this .next = null;
+
+    }
+
+}
+public class Mains{
+    Node head;
+    public void insert_at_begining(int data){
+        Node newnode = new Node(data);
+        newnode.next = head ;
+        head = newnode;
+    }
+    public void deleteatbegining(){
+        if(head==null){
+            System.out.println("is empty");
+            return;
+        }
+        head= head.next;
+    }
+    public void insert_at_end(int data){
+        Node newnode = new Node(data);
+        if(head == null){
+            head =newnode;
+            return;  
+        }
+        Node temp = head ;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=newnode;
+
+    }
+    public void deleteatend(){
+        if(head==null){
+            System.out.println("is empty");
+            return;
+        }
+        if(head.next==null){
+            head=null;
+            return;
+        }
+        Node temp = head;
+        while(temp.next.next!=null){
+            temp=temp.next;
+        }
+        temp.next=null;
+    }
+    public void insertatspecificpos(int data,int pos){
+        if(pos==1){
+            insert_at_begining(data);
+            return;
+        }
+        Node newnode = new Node(data);
+        Node temp = head;
+        for (int i = 1;i<pos && temp!=null;i++){
+            temp =temp.next;
+        }
+        newnode.next = temp.next;
+        temp.next = newnode;
+    }
+    public void deleteatspecificpos(int pos){
+        if(head==null){
+            System.out.println("empty");
+            return;
+        }
+        if(pos==1){
+            deleteatbegining();
+            return;
+        }
+        Node temp = head;
+        for(int i = 1;i<pos && temp!=null;i++){
+            temp = temp.next;
+        }
+        if(temp==null || temp.next==null){
+            System.out.println("out of range");
+            return;
+        }
+        temp.next=temp.next.next;
+    }
+    public void display(){
+        if(head == null ){
+            System.out.println("ll is empty");
+            return;
+
+        }
+        Node temp = head ;
+        while (temp!=null) {
+            System.out.print(temp.data+"->");
+            temp=temp.next;
+            
+        }
+        System.out.println("null");
+
+    }
+    public static void main(String[] args) {
+        Mains list = new Mains();
+        list.insert_at_begining(10);
+        list.insert_at_begining(20);
+        list.insert_at_begining(30);
+        list.display();
+        list.insert_at_end(40);
+        list.insert_at_end(50);
+        list.display();
+        list.insertatspecificpos(70, 2);
+        list.insertatspecificpos(80, 1);
+        list.display();
+        list.deleteatbegining();
+        list.display();
+        list.deleteatend();
+        list.display();
+        list.deleteatspecificpos(3);
+        list.display();
+    }
+}
