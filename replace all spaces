@@ -1,0 +1,18 @@
+import java.util.*;
+public class string {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();//this will take the user given input and store it in s (sentence)
+        char c = sc.next().charAt(0);   //this will take the first charecter like @ # % a v h ..if a wors is give 
+                                              //like apple then charat(0) make sure to take the 0 th position and the a will be taken as a chrecter 
+                                              // if a sentence is given" iT am riya" then the sc.next () will stop when space occueres and the word iT will be taken then
+                                              //charAt(0) will take the first letter that is i .
+        String replaced = s.replace(' ', c);
+        System.out.println("before replacement : " + s );
+        System.out.println("after replacemet : "+replaced);
+
+
+        
+    }
+    
+}
