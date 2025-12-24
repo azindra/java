@@ -1,0 +1,38 @@
+import java.util.*;
+public class ifelse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        char Citizenship = sc.next().charAt(0);
+        char voterid = sc.next().charAt(0);
+        if (Citizenship=='y'){
+            if(age>=18){
+                if(voterid=='y'){
+                    if(age>=60){
+                        System.out.println(" Eligible Senior Citizen Voter");
+                                                        
+                    }
+                    else{
+                        System.out.println(" Eligible Voter");
+                                                        
+                    }
+                }else{
+                    System.err.println("Eligible but Voter ID Required");
+                                                
+                }
+            }
+            else{
+                System.out.println(" Not Eligible (Underage)");
+                            
+            }
+
+
+        }
+        else{
+            System.out.println("Not Eligible (Not a Citizen)");
+        }
+
+        
+    }
+    
+}
