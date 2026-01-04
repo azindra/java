@@ -1,0 +1,35 @@
+import java.util.*;
+public class arry {
+
+    public static int maxproduct(int[] arr){
+        int maxproduct=arr[0];
+        int minproduct=arr[0];
+        int ans =arr[0];
+        for (int i=1;i<arr.length;i++){
+            if(arr[i]<0){
+                int temp = maxproduct;
+                maxproduct=minproduct;
+                minproduct=temp;
+
+            }
+            maxproduct=Math.max(arr[i], maxproduct*arr[i]);
+             minproduct=Math.min(arr[i], minproduct*arr[i]);
+             ans=Math.max(ans,maxproduct);
+            
+
+        }
+        return ans;
+    }
+    public static void main(String[] args) {
+    Scanner sc = new Scanner (System.in);
+    int s = sc.nextInt();
+    int[] arr = new int[s];
+    for(int i =0;i<s;i++){
+        arr[i]=sc.nextInt();
+    }
+    System.out.println(Arrays.toString(arr));
+    System.out.println(maxproduct(arr));
+    }
+
+
+}
