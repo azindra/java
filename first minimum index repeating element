@@ -1,0 +1,33 @@
+import java.util.*;
+public class arry {
+
+    public static int fistindexrepeatingelemet(int [] arr){
+        int minindex=arr.length;
+        HashMap<Integer,Integer> map = new HashMap<>(); 
+        for(int i =0;i<arr.length;i++){
+            if(map.containsKey(arr[i])){
+                minindex=Math.min(minindex, map.get(arr[i]));
+            }
+            else{
+                map.put(arr[i], i);
+            }
+
+        }
+        return (minindex==arr.length) ? -1:arr[minindex];
+
+        
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+            int s = sc.nextInt();
+            int[] arr=new int[s];
+            for(int i =0;i<s;i++){
+                arr[i]=sc.nextInt();
+            }
+            System.out.println(Arrays.toString(arr));
+            System.out.println(fistindexrepeatingelemet(arr));
+
+        }
+    
+}
+
