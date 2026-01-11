@@ -1,0 +1,37 @@
+import java.util.*;
+public class arry {
+
+    public static int stocks(int[] prices){
+        int minprice =Integer.MAX_VALUE;
+        int maxprofit =0;
+        int buyprice=0;
+        int sellprice =0;
+        for(int price:prices){
+            if(price<minprice){
+                minprice=price;
+            }
+            else{
+                int profit = price-minprice;
+                maxprofit=Math.max(profit,maxprofit);
+                //if(profit>maxprofit){
+               // buyprice = minprice;
+              //sellprice = price;}
+                
+
+
+            }
+        }
+        return maxprofit;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s =sc.nextInt();
+        int [] prices = new int[s];
+        for(int i =0;i<s;i++){
+            prices[i]=sc.nextInt();
+
+        }
+        System.out.println(Arrays.toString(prices));
+        System.out.println(stocks(prices));
+    }
+}
