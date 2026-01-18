@@ -1,0 +1,25 @@
+//sliding window concept
+import java.util.*;
+public class strings {
+public static int longestsubstringnorepeat(String s ){
+    int left =0;
+    int maxlength=0;
+    int n = s.length();
+    HashSet<Character> set = new HashSet<>();
+    for(int right =0;right<n;right++){
+        while(set.contains(s.charAt(right))){
+            set.remove(s.charAt(left));
+            left++;
+        }
+        set.add(s.charAt(right));
+        maxlength=Math.max(maxlength,right-left+1);
+    }
+    return maxlength;
+}
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String s = sc.nextLine();
+    System.out.println("the string given is : "+s);
+    System.out.println(longestsubstringnorepeat(s));
+}
+}
