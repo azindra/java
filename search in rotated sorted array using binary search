@@ -1,0 +1,48 @@
+import java.util.*;
+public class searching {
+
+    public static int searchinrotatedarray(int [] arr,int target){
+        int low =0;
+        int high = arr.length-1;
+        while(low<=high){
+            int mid = low+(high-low)/2;
+            //case 1 if mid matches with target
+            if(arr[mid]==target){
+                return mid;
+            }
+            //case : check if left half is sorted
+        if(arr[low]<=arr[mid]){
+            //target lies in left half
+            if(target<arr[mid]&& target>=arr[low]){
+                high = mid -1;
+            }
+            else{
+                //lies in right half
+                low = mid+1;
+            }
+        }
+        else{
+            //right half is sorted
+            if(target>arr[mid]&&target<=arr[high]){
+                //lies in right half
+                low = mid+1;
+            }
+            else{
+                high = mid-1;
+            }
+        }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s = sc.nextInt();
+        int [] arr = new int[s];
+        for(int i =0;i<s;i++){
+            arr[i]= sc.nextInt();
+        }
+        System.out.println("Arrays : "+Arrays.toString(arr));
+        int target = sc.nextInt();
+        System.out.println(searchinrotatedarray(arr, target));
+    }
+}
