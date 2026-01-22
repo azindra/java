@@ -1,0 +1,39 @@
+//linear search
+//array is unsorted 
+//first and last occurance
+import java.util.*;
+public class searching {
+    public static void occurance(int[] arr,int target){
+        int first =-1;
+        int last =-1;
+        int count=0;
+        for(int i =0;i<arr.length;i++){
+            if(arr[i]==target){
+                count++;
+                if(first==-1){
+                    first=i;
+                }
+                last=i;
+            }
+        }
+        System.out.println("first occurence index : "+first);
+        System.out.println("last occurence index : "+last);
+        System.out.println("number of ocuurence of "+target+" : "+count);
+        
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s= sc.nextInt();
+        int[] arr = new int[s];
+        for(int i =0;i<s;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("the array given : "+Arrays.toString(arr));
+        int target= sc.nextInt();
+        System.out.println("the target given :"+target);
+        occurance(arr, target);
+    }
+
+    
+}
